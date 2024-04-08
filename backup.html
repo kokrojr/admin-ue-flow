@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Workspace - UE Flow &amp; Accounting</title>
+    <meta name="description" content="Efficiently manage your workflow and accounting tasks with the admin dashboard of Unique Flow & Accounting. Streamline processes, control access, and ensure compliance for your business needs.">
+    <meta name="keywords" content="admin dashboard, workflow management, accounting software, business management, access control, compliance, Unique Flow & Accounting">
+
+    <!-- Favicons -->
+
+    <!-- Web Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.0.0/dist/iconify-icon.min.js"></script>
+    <script src="https://kit.fontawesome.com/2e37c4d39c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- Stylings -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/component.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <!-- ===========================================================================================================
+    * Web app Development and Management Information:
+    
+    * App Development: Developed by Accend Engineering & Technology LLC. 
+        Our team has worked extensively on the design, coding, and implementation of the app's features, 
+        ensuring a user-friendly experience and seamless functionality.
+    
+    * App Management: Managed by Accend Engineering & Technology LLC.
+        The web app undergoes regular maintenance and updates. Our management includes content updates, 
+        performance optimization, security monitoring, and ensuring overall operational efficiency.
+    
+    * Contact Information: For inquiries, or feedback regarding the web app, please contact us 
+        at [webmaster@accendet.com] or visit our website at [www.accendet.com].
+    
+    * Note: This comment is for informational purposes and is not visible to the web app's end-users. 
+        It serves as a documentation of the development and management responsibilities of Accend.
+
+    ============================================================================================================ -->
+
+</head>
+<body class="dashboard-page">
+
+    <div class="container">
+
+        <!-- ==== Begin Header ==== -->
+        <header class="header">
+            <div class="wrapper d-flex f-align-center-space-between">
+                <div class="col-flex d-flex f-align-center-justify-start">
+                    <!-- Menu Button -->
+                    <button type="button" role="button" title="menu" id="menu-btn" class="menu-btn">
+                        <i class="fa-solid fa-bars icon menu"></i>
+                        <!-- <iconify-icon class="icon menu" icon="material-symbols:menu"></iconify-icon> -->
+                    </button>
+                    <h4 class="account-role"><div class="active-dot"></div>Admin</h4>
+                </div>
+
+                <!-- Search -->
+                <div class="search-container">
+                    <i class="fa-solid fa-magnifying-glass icon"></i>
+                    <!-- <iconify-icon class="icon" icon="material-symbols:search"></iconify-icon> -->
+                    <input type="text" class="search-input" placeholder="Search documents and files...">
+                    <ul class="quick-results"></ul>
+                </div>
+
+                <!-- Flex-box -->
+                <div class="d-flex f-align-center">
+
+                    <!-- Create New Btn -->
+                    <!-- HTML !-->
+                    <button class="button-39" role="button">Create</button>
+
+                    <!-- <button id="create-new-btn" class="create-new-btn pri-cta">
+                        <i class="fa-solid fa-plus icon"></i>
+                        Create
+                    </button> -->
+
+                    <!-- Navigate pages from on Header -->
+                    <div class="header-nav-icon-set">
+                        <button type="button" id="notes-btn" class="header-nav-btn">
+                            <i class="fa-regular fa-envelope"></i>
+                        </button>
+                        <!-- <button type="button" id="settings-btn" class="header-nav-btn">
+                            <span>Settings</span>
+                            <iconify-icon class="icon settings" icon="material-symbols:settings-outline"></iconify-icon>
+                        </button> -->
+                        <button type="button" id="notification-btn" class="header-nav-btn">
+                            <i class="fa-regular fa-bell"></i>
+                        </button>
+                    </div>
+                
+                    <!-- User Profile Card -->
+                    <div class="user-profile-card d-flex f-align-center-space-between">
+                        <!-- Profile Picture -->
+                        <img class="user-profile-picture" src="" alt="">
+                        <!-- Profile info -->
+                        <div id="user-content-menu" class="user-content-menu d-flex">
+                            <span id="user-name" class="user-name">Hi, Daniel</span>
+                            <span>
+                                <i class="fa-solid fa-angle-down icon"></i>
+                                <!-- <iconify-icon class="icon" icon="material-symbols:arrow-drop-down"></iconify-icon> -->
+                            </span>
+                            <!-- Dropdown Menu -->
+                            <div class="dropdown-content-wrapper">
+                                <ul class="dropdown-content">
+                                    <li>
+                                        <a href="#">
+                                            <iconify-icon class="drop-down-icon" icon="material-symbols:person-outline"></iconify-icon>
+                                            My Account
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <iconify-icon class="drop-down-icon" icon="material-symbols:logout-sharp"></iconify-icon>
+                                            Logout
+                                        </a>
+                                    </li>
+                                    <li class="border-top">
+                                        <a href="#">
+                                            <iconify-icon class="drop-down-icon" icon="material-symbols:help-outline"></iconify-icon>
+                                            Need Help?
+                                        </a>
+                                    </li>
+                                    <!-- Dropdown End -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Header -->
+        </header>
+
+        <!-- ==== Begin Sidebar ==== -->
+        <aside class="sidebar">
+
+            <!-- Logo -->
+            <div class="logo d-flex f-align-center-justify-start">
+                <img src="assets/images/logo.png" alt="logo">
+            </div>
+
+            <!-- Navigation -->
+            <ul id="sidebar-navigation" class="sidebar-navigation">
+                <!-- General Navigation -->
+                <li class="nav-title">General</li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <iconify-icon class="icon" icon="material-symbols:dashboard-outline"></iconify-icon>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <iconify-icon class="icon" icon="material-symbols:widgets-outline"></iconify-icon>
+                        Workspace
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <iconify-icon class="icon" icon="material-symbols:bookmark-manager-outline"></iconify-icon>
+                        Ledger
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <iconify-icon class="icon" icon="material-symbols:inbox-customize-outline"></iconify-icon>
+                        Accounts
+                    </a>
+                </li>
+                
+                <!--  -->
+                <li class="line-divider"></li>
+
+                <!-- UE Books Navigation -->
+                <li class="nav-title">Books</li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <iconify-icon class="icon" icon="material-symbols:insert-chart-outline"></iconify-icon>
+                        Sales
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <iconify-icon class="icon" icon="material-symbols:pie-chart-outline"></iconify-icon>
+                        Expense
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <iconify-icon class="icon" icon="material-symbols:pending-actions"></iconify-icon>
+                        Payroll
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <iconify-icon class="icon" icon="material-symbols:pending-actions"></iconify-icon>
+                        Inventory
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <iconify-icon class="icon" icon="material-symbols:checklist"></iconify-icon>                
+                        Reports
+                    </a>
+                </li>
+
+                <!-- / -->
+                <li class="line-divider"></li>
+
+                <!-- People Navigation -->
+                <li class="nav-title">People</li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <iconify-icon class="icon" icon="material-symbols:groups-outline-rounded"></iconify-icon>                          
+                        Customers
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <iconify-icon class="icon" icon="material-symbols:group-outline-rounded"></iconify-icon>                        
+                        Employees
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <iconify-icon class="icon" icon="material-symbols:supervised-user-circle-outline"></iconify-icon>                  
+                        Vendors
+                    </a>
+                </li>
+
+                <div class="versioning">
+                    <p>App <span id="version-number">v-1.0.0</span> - Last update: <span id="update-counter">5</span> mins ago</p>
+                </div>
+
+            </ul>
+            <!-- End Sidebar -->
+        </aside>
+
+        <!-- ==== Main Content ==== -->
+        <div class="main">
+
+            <div class="breadcrumbs">
+                <h4 class="main-page-title">Workspace</h4>
+                <p class="link-path">
+                    <a href="#"><i class="bi bi-house-door-fill icon"></i></a>
+                    Workspace <i class="bi bi-chevron-right"></i> My Board</p>
+            </div>
+
+            <div class="main-content-wrappper">
+                <!-- Sub-navigation -->
+                <!-- <ul class="sub-nav-on-page-for-tabs d-flex">
+                    <li class="nav-item">
+                        <a href="" class="nav-link active">My board</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">All documents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Notes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Files</a>
+                    </li>
+                </ul> -->
+            
+                <!-- Page Banner -->
+                <div class="page-banner">
+                    <div class="headline">
+                        <h1 id="dt-current-page" class="current-page">My board</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <ul class="data-list d-flex">
+                        <li class="data-item">Total processed <span id="total-processed-by-user" class="data">1,473</span></li>
+                        <li class="data-item">Vouchers <span id="total-processed-by-user" class="data">1,473</span></li>
+                        <li class="data-item">Invoices <span id="total-processed-by-user" class="data">10</span></li>
+                        <li class="data-item">Requisitions <span id="total-processed-by-user" class="data">10</span></li>
+                        <li class="data-item">Purchase orders <span id="total-processed-by-user" class="data">10</span></li>
+                    </ul>
+                </div>
+            
+                <!-- Page Data Table Action Bar -->
+                <div class="table-wrapper">
+                    <div class="page-action-bar d-flex f-align-center-space-between">
+                        <div class="col">
+                            <button class="button-39"><i class="bi bi-funnel"></i> Filter</button>
+                            <button class="button-39"><i class="bi bi-cloud-arrow-down"></i> Download</button>
+                            <button class="button-39"><i class="bi bi-printer"></i> Print</button>
+                        </div>
+                        <!--  -->
+                        <div class="col-2">
+                            <div class="page-record-action">
+                                <!-- Search Bar -->
+                                <div class="search-container">
+                                    <iconify-icon class="icon" icon="material-symbols:search"></iconify-icon>
+                                    <input type="text" class="search-input" placeholder="Search records...">
+                                    <ul class="quick-results"></ul>
+                                </div>
+                                <!-- Record Filter -->
+                                <span>
+                                    Showing: <button id="my-barod-record-filter" class="my-barod-record-filter">Active records<iconify-icon class="icon" icon="material-symbols:arrow-drop-down"></iconify-icon></button>
+                                </span>
+                                <!-- Btn, New Document -->
+                                <button id="my-barod-create-btn" class="button-39">
+                                    Create New Document
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--  -->
+                    <table id="user-board-table" class="data-table">
+                        <thead>
+                            <tr>
+                                <th class="sortable" data-sort="doc-type">Doc Type</th>
+                                <th class="sortable" data-sort="doc-id">Doc ID</th>
+                                <th class="sortable" data-sort="prepared-by">Prepared By</th>
+                                <th class="sortable" data-sort="prepared-for">Prepared For</th>
+                                <th class="sortable" data-sort="status">Status</th>
+                                <th class="sortable" data-sort="flow-status">Flow Status</th>
+                                <th class="sortable" data-sort="date">Date</th>
+                                <th class="sortable align-right" data-sort="amount">Amount</th>
+                                <th class="align-heading-right">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Table data goes here -->
+                        </tbody>
+                    </table>
+                    <!--  -->
+                    <div class="pagination" id="pagination"></div>
+                </div>
+            
+            </div>
+
+
+            
+
+        </div>
+
+        <!-- ==== Begin Footer ==== -->
+        <footer class="footer">
+            <p class="copy">© 2024 - UE Flow & Accounting | Unique Enterprise LLC | Developed by Accend Engineering & Technology</p>
+        </footer>
+
+
+    </div>
+
+    
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+    
+    <!-- JavaScript -->
+    <script src="Services/AuthService.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script src="Services/flowDataService.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Requisition Form</title>
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <!-- ===========================================================================================================
+    * Web app Development and Management Information:
+    
+    * App Development: Developed by Accend Engineering & Technology LLC. 
+        Our team has worked extensively on the design, coding, and implementation of the app's features, 
+        ensuring a user-friendly experience and seamless functionality.
+    
+    * App Management: Managed by Accend Engineering & Technology LLC.
+        The web app undergoes regular maintenance and updates. Our management includes content updates, 
+        performance optimization, security monitoring, and ensuring overall operational efficiency.
+    
+    * Contact Information: For inquiries, or feedback regarding the web app, please contact us 
+        at [webmaster@accendet.com] or visit our website at [www.accendet.com].
+    
+    * Note: This comment is for informational purposes and is not visible to the web app's end-users. 
+        It serves as a documentation of the development and management responsibilities of Accend.
+
+    ============================================================================================================ -->
+</head>
+<body>
+
+    <div id="requisition-form-container" class="requisition-form-container form--u1">
+        <div class="requisition-form">
+            <div class="headline">
+                <h2 class="form-title">Create Requisition</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt.</p>
+                <button onclick="closeRequisitionModal()" id="close-requsition-btn" class="close-btn pri-cta" type="button" title="Exit">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="content-wrapper">
+                <!-- Personal Information -->
+                <div class="section-headline">
+                    <h4>Personal Information</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="input-group">
+                    <label for="fname">First Name:</label>
+                    <input class="form-input" id="fname" name="fname" type="text">
+                </div>
+                <div class="input-group">
+                    <label for="lname">Last Name:</label>
+                    <input class="form-input" id="lname" name="lname" type="text">
+                </div>
+                <div class="input-group">
+                    <label for="department">Department:</label>
+                    <select class="form-input" id="department" name="department">
+                        <option value="">Select Department</option>
+                        <option value="finance">Finance</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="Technical Services">Technical Services</option>
+                        <!-- TODO: Add more department options -->
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="purposeOfRequest">Purpose of request:</label>
+                    <input class="form-input" id="purposeOfRequest" name="purposeOfRequest" type="text">
+                    <!-- <textarea class="form-input" id="purpose-of-request" name="purpose-of-request" rows="3"></textarea> -->
+                </div>
+                <div class="line-divider"></div>
+                <!-- Requisition Details -->
+                <div class="section-headline">
+                    <h4>Requisition Details</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="input-group">
+                    <label for="itemName">Item name:</label>
+                    <input class="form-input" id="itemName" name="itemName" type="text">
+                </div>
+                <div class="input-group">
+                    <label for="itemDescription">Item description:</label>
+                    <input class="form-input" id="itemDescription" name="itemDescription" type="text">
+                </div>
+                <div class="input-group">
+                    <label for="quantity">Quantity:</label>
+                    <input class="form-input" id="quantity" name="quantity" type="number">
+                </div>
+                <div class="input-group">
+                    <label for="currency">Currency:</label>
+                    <select class="form-input" id="currency" name="currency">
+                        <option value="">Select Currency</option>
+                        <option value="LRD">LRD</option>
+                        <option value="USD">USD</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="price">Unit Price:</label>
+                    <input class="form-input" id="price" name="price" type="number">
+                </div>
+                <button type="button" role="button" id="add-item-btn" class="button-1">Add Item</button>
+                <div class="line-divider"></div>
+                <!-- Data Table -->
+                <table class="table-1">
+                    <thead>
+                        <tr>
+                            <th>S/N</th>
+                            <th>Item</th>
+                            <th>Item description</th>
+                            <th>Quantity</th>
+                            <th>Currency</th>
+                            <th>Unit Price</th>
+                            <th class="amount">Subtotal</th>
+                            <th class="action">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Laptop computer</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus scelerisque gravida aliquet.</td>
+                            <td>1</td>
+                            <td>USD</td>
+                            <td>50,0000</td>
+                            <td class="amount">$ 500,000,000</td>
+                            <td class="action">
+                                <button type="button" class="edit-doc" docID="12345" title="Edit">
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="delete-doc" docID="12345" title="Delete">
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Laptop computer</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus scelerisque gravida aliquet.</td>
+                            <td>1</td>
+                            <td>USD</td>
+                            <td>50,0000</td>
+                            <td class="amount">$ 500,000,000</td>
+                            <td class="action">
+                                <button type="button" class="edit-doc" docID="12345" title="Edit">
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="delete-doc" docID="12345" title="Delete">
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Laptop computer</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus scelerisque gravida aliquet.</td>
+                            <td>1</td>
+                            <td>USD</td>
+                            <td>50,0000</td>
+                            <td class="amount">$ 500,000,000</td>
+                            <td class="action">
+                                <button type="button" class="edit-doc" docID="12345" title="Edit">
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="delete-doc" docID="12345" title="Delete">
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Laptop computer</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus scelerisque gravida aliquet.</td>
+                            <td>1</td>
+                            <td>USD</td>
+                            <td>50,0000</td>
+                            <td class="amount">$ 500,000,000</td>
+                            <td class="action">
+                                <button type="button" class="edit-doc" docID="12345" title="Edit">
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="delete-doc" docID="12345" title="Delete">
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="grand-total">
+                            <td colspan="6">Grand Total</td>
+                            <td class="amount">$ 500,000,000</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <!-- Attach Proforma -->
+                <div class="section-headline attachment">
+                    <h4>Attach Proforma</h4>
+                    <p>Select Proforma files for the requisition:</p>
+                </div>
+                <div class="input-group">
+                    <label for="proforma1">Proforma 1:</label>
+                    <input class="form-input" id="proforma1" name="proforma1" type="file" accept=".pdf, .doc, .docx, .jpg, .jpeg, .png">
+                </div>
+                <div class="input-group">
+                    <label for="proforma2">Proforma 2:</label>
+                    <input class="form-input" id="proforma2" name="proforma2" type="file" accept=".pdf, .doc, .docx, .jpg, .jpeg, .png">
+                </div>
+                <!-- Buttons -->
+                <div class="button-group">
+                    <input id="req-save-as-draft-btn" type="submit" value="Save as draft" class="sec-cta">
+                    <input id="req-submit-btn" type="submit" value="Submit requisition" class="pri-cta">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+</body>
+</html>

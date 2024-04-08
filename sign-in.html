@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Sign In</title>
+    <meta name="description" content="Efficiently manage your workflow and accounting tasks with the admin dashboard of Unique Flow & Accounting. Streamline processes, control access, and ensure compliance for your business needs.">
+    <meta name="keywords" content="admin dashboard, workflow management, accounting software, business management, access control, compliance, Unique Flow & Accounting">
+
+    <!-- Favicons -->
+
+    <!-- Web Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Stylings -->
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+    <link rel="stylesheet" href="assets/css/test.css">
+    <!-- <link rel="stylesheet" href="assets/css/component.css"> -->
+    <!-- <link rel="stylesheet" href="assets/css/responsive.css"> -->
+
+    <!-- ===========================================================================================================
+    * Web app Development and Management Information:
+    
+    * App Development: Developed by Accend Engineering & Technology LLC. 
+        Our team has worked extensively on the design, coding, and implementation of the app's features, 
+        ensuring a user-friendly experience and seamless functionality.
+    
+    * App Management: Managed by Accend Engineering & Technology LLC.
+        The web app undergoes regular maintenance and updates. Our management includes content updates, 
+        performance optimization, security monitoring, and ensuring overall operational efficiency.
+    
+    * Contact Information: For inquiries, or feedback regarding the web app, please contact us 
+        at [webmaster@accendet.com] or visit our website at [www.accendet.com].
+    
+    * Note: This comment is for informational purposes and is not visible to the web app's end-users. 
+        It serves as a documentation of the development and management responsibilities of Accend.
+
+    ============================================================================================================ -->
+
+</head>
+<body class="sign-in-page">
+
+    <div class="container">
+        <!-- Sign-in Form -->
+        <div class="sign-in-form">
+            <div class="wrapper">
+                <div class="headline">
+                    <h1>Sign In</h1>
+                    <p>Welcome to UE Admin Portal.</p>
+                </div>
+                <div class="input-group">
+                    <div class="form-input">
+                        <i class="bi bi-envelope icon"></i>
+                        <input id="email" type="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-input">
+                        <i class="bi bi-person icon"></i>
+                        <input id="password" type="password" placeholder="Enter your password">
+                    </div>
+                </div>
+                <div id="sign-in-cta-bx" class="sign-in-cta-bx">
+                    <button id="sign-in-btn" onclick="beginSignIn()" class="sign-in-btn pri-cta">Sign in</button>
+                </div>
+                <div id="forgot-password-bx" class="forgot-password-bx">
+                    <a href="#" class="forgot-password-link">Forgot Password?</a>
+                </div>
+            </div>
+        </div>
+        <!-- Copy Right -->
+        <p class="copy-right">© 2024 - UE Flow & Accounting | Unique Enterprise LLC | Developed by Accend Engineering & Technology</p>
+    </div>
+
+    <!-- Alet Box -->
+    <div id="alert-box" class="alert-box hide-alert">
+        <div class="message-box">
+            <p id="alert-message">This is a message</p>
+        </div>
+    </div>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+    
+    <!-- JavaScript -->
+    <script src="Services/AuthService.js"></script>
+    <script src="assets/js/utils.js"></script>
+
+    <!--  -->
+    <script>
+
+        const beginSignIn = function () {
+            signInUser();
+        }
+
+        // Event listener to email input field
+        document.getElementById("email").addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                signInUser();
+            }
+        });
+
+        // Event listener to password input field
+        document.getElementById("password").addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                signInUser();
+            }
+        });
+
+    </script>
+    
+
+    
+
+
+    
+</body>
+</html>

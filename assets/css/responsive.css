@@ -1,0 +1,55 @@
+/* Tablet Styles */
+
+@media screen {
+
+    /* Tablet Base Font Size */
+    html {
+        font-size: 14px;
+        /* Adjust as needed for specific tablet devices */
+    }
+
+    /* Headings */
+    h1 {
+        font-size: 2rem;
+        /* 32px */
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        /* 28.8px */
+    }
+
+    h3 {
+        font-size: 1.6rem;
+        /* 25.6px */
+    }
+
+    h4 {
+        font-size: 1.4rem;
+        /* 22.4px */
+    }
+
+    h5 {
+        font-size: 1.25rem;
+        /* 20px */
+    }
+
+    h6 {
+        font-size: 1.125rem;
+        /* 18px */
+    }
+
+    /* Paragraphs */
+    p {
+        font-size: 1rem;
+        /* 16px */
+    }
+
+    /* Small Text */
+    .small-text {
+        font-size: 0.9rem;
+        /* 14.4px */
+    }
+
+
+}

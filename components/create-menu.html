@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Create Menu</title>
+
+    <!-- ===========================================================================================================
+    * Web app Development and Management Information:
+    
+    * App Development: Developed by Accend Engineering & Technology LLC. 
+        Our team has worked extensively on the design, coding, and implementation of the app's features, 
+        ensuring a user-friendly experience and seamless functionality.
+    
+    * App Management: Managed by Accend Engineering & Technology LLC.
+        The web app undergoes regular maintenance and updates. Our management includes content updates, 
+        performance optimization, security monitoring, and ensuring overall operational efficiency.
+    
+    * Contact Information: For inquiries, or feedback regarding the web app, please contact us 
+        at [webmaster@accendet.com] or visit our website at [www.accendet.com].
+    
+    * Note: This comment is for informational purposes and is not visible to the web app's end-users. 
+        It serves as a documentation of the development and management responsibilities of Accend.
+
+    ============================================================================================================ -->
+</head>
+<body>
+
+    <div id="create-menu" class="create-menu modal-bg">
+        <div class="wrapper">
+            <!-- Customers -->
+            <ul class="customers-menu">
+                <li class="sub-heading">Customers</li>
+                <!-- Documents issued to customers -->
+                <li id="create-sales-order-btn" onclick="openSalesOrderModal()" class="menu-item">Sales order</li>
+                <li id="create-invoice-btn" onclick="openCommingSoonModal()" class="menu-item">Invoice</li>
+                <li id="create-sales-receipt-btn" onclick="openCommingSoonModal()" class="menu-item">Sales receipt</li>
+            </ul>
+            <!-- Vendors -->
+            <ul class="vendors-menu">
+                <li class="sub-heading">Vendors</li>
+                <!-- Documents issued to vendors -->
+                <li id="create-purchase-order-btn" onclick="openCommingSoonModal()" class="menu-item">Purchase order</li>
+                <li id="create-payment-voucher-btn" onclick="openVoucherModal()" class="menu-item">Payment Voucher</li>
+            </ul>
+            <!-- Employees -->
+            <ul class="employees-menu">
+                <!-- Documents submitted by employees -->
+                <li class="sub-heading">Employees</li>
+                <li id="create-requisition-btn" onclick="openRequisitionModal()" class="menu-item">Requisition</li>
+                <li id="create-leave-of-absence-btn" onclick="openCommingSoonModal()" class="menu-item">Leave of absence</li>
+                <li id="create-ledger-btn" onclick="openCommingSoonModal()" class="menu-item">Ledger entry</li>
+            </ul>
+            <!-- Transactions -->
+            <ul class="transactions-menu">
+                <!-- Process transaction -->
+                <li class="sub-heading">Transactions</li>
+                <li id="make-payment-btn" onclick="openCommingSoonModal()" class="menu-item">Make payment</li>
+                <li id="issue-check-btn" onclick="openCommingSoonModal()" class="menu-item">Issue check</li>
+                <li id="receive-payment-btn" onclick="openCommingSoonModal()" class="menu-item">Receive payment</li>
+                <li id="pay-salary-btn" onclick="openCommingSoonModal()" class="menu-item">Pay salary</li>
+                <li id="settle-bills-btn" onclick="openCommingSoonModal()" class="menu-item">Settle bills</li>
+            </ul>
+            <!-- Others -->
+            <ul class="others-menu">
+                <!-- Manage entities -->
+                <li id="create-new-entity-btn" onclick="openCommingSoonModal()" class="sub-heading">New entity</li>
+                <li id="create-product-service-btn" onclick="openCommingSoonModal()" class="menu-item">Product &#47; service</li>
+                <li id="create-customer-btn" onclick="openCommingSoonModal()" class="menu-item">Customer</li>
+                <li id="create-vendor-btn" onclick="openCommingSoonModal()" class="menu-item">Vendor</li>
+            </ul>
+        </div>
+    </div>
+    
+</body>
+</html>

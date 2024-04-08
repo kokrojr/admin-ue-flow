@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Voucher Form</title>
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    <!-- ===========================================================================================================
+    * Web app Development and Management Information:
+    
+    * App Development: Developed by Accend Engineering & Technology LLC. 
+        Our team has worked extensively on the design, coding, and implementation of the app's features, 
+        ensuring a user-friendly experience and seamless functionality.
+    
+    * App Management: Managed by Accend Engineering & Technology LLC.
+        The web app undergoes regular maintenance and updates. Our management includes content updates, 
+        performance optimization, security monitoring, and ensuring overall operational efficiency.
+    
+    * Contact Information: For inquiries, or feedback regarding the web app, please contact us 
+        at [webmaster@accendet.com] or visit our website at [www.accendet.com].
+    
+    * Note: This comment is for informational purposes and is not visible to the web app's end-users. 
+        It serves as a documentation of the development and management responsibilities of Accend.
+
+    ============================================================================================================ -->
+</head>
+<body>
+
+    <div id="payment-voucher-form-container" class="payment-voucher-form-container form--u1">
+        <div class="payment-voucher-form">
+            <div class="headline">
+                <h2 class="form-title">Create Payment Voucher</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt.</p>
+                <button onclick="closePaymentVoucherModal()" id="close-payment-voucher-btn" class="close-btn pri-cta" type="button" title="Exit">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="content-wrapper">
+                <!-- Vendor Information -->
+                <div class="section-headline">
+                    <h4>Vendor Information</h4>
+                    <p>Enter details of the vendor being paid.</p>
+                </div>
+                <div class="input-group">
+                    <label for="vendorName">Vendor Name:</label>
+                    <input class="form-input" id="vendorName" name="vendorName" type="text">
+                </div>
+                <div class="input-group">
+                    <label for="vendorAddress">Vendor Address:</label>
+                    <input class="form-input" id="vendorAddress" name="vendorAddress" type="text">
+                    <!-- <textarea class="form-input" id="vendorAddress" name="vendorAddress" rows="3"></textarea> -->
+                </div>
+
+                <!-- Payment Details -->
+                <div class="section-headline">
+                    <h4>Payment Details</h4>
+                    <p>Enter details of the payment.</p>
+                </div>
+
+                <div class="input-group">
+                    <label for="currency">Currency:</label>
+                    <select class="form-input" id="currency" name="currency">
+                        <option value="">Select Currency</option>
+                        <option value="USD">USD</option>
+                        <option value="LRD">LRD</option>
+                        <!-- Add more payment methods as needed -->
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="paymentAmount">Amount:</label>
+                    <input class="form-input" id="paymentAmount" name="paymentAmount" type="number">
+                </div>
+                
+                <div class="input-group">
+                    <label for="paymentDate">Payment Date:</label>
+                    <input class="form-input" id="paymentDate" name="paymentDate" type="date">
+                </div>
+
+                <div class="input-group">
+                    <label for="purposeOfPayment">Purpose of Payment:</label>
+                    <input class="form-input" id="purposeOfPayment" name="purposeOfPayment" type="text">
+                </div>
+
+                <!-- Payment Method -->
+                <div class="section-headline">
+                    <h4>Payment Method</h4>
+                    <p>Select the payment method.</p>
+                </div>
+
+                <div class="input-group">
+                    <label for="paymentMethod">Payment Method:</label>
+                    <select class="form-input" id="paymentMethod" name="paymentMethod">
+                        <option value="">Select Payment Method</option>
+                        <option value="cash">Cash</option>
+                        <option value="cheque">Cheque</option>
+                        <option value="bank-transfer">Bank Transfer</option>
+                        <!-- Add more payment methods as needed -->
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="accountCharged">Account Charged:</label>
+                    <input class="form-input" id="accountCharged" name="accountCharged" type="text">
+                </div>
+                
+                <!-- Attach Invoice or Link to Requisition -->
+                <div class="section-headline">
+                    <h4>Attach Invoice or Link to Requisition</h4>
+                    <p>Select invoice file for the payment or link it to a requisition.</p>
+                </div>
+                <div class="input-group">
+                    <label for="invoiceFile">Attach Invoice:</label>
+                    <input class="form-input" id="invoiceFile" name="invoiceFile" type="file" accept=".pdf, .doc, .docx">
+                </div>
+                <div class="input-group">
+                    <label for="requisitionLink">Link to Requisition:</label>
+                    <select class="form-input" id="requisitionLink" name="requisitionLink">
+                        <option value="">Select Requisition</option>
+                        <!-- Populate options dynamically from requisitions -->
+                        <!-- Example: <option value="requisitionID">Requisition Title</option> -->
+                    </select>
+                </div>
+                <!-- Buttons -->
+                <div class="button-group">
+                    <input id="payment-save-as-draft-btn" type="submit" value="Save as draft" class="sec-cta">
+                    <input id="payment-submit-btn" type="submit" value="Submit voucher" class="pri-cta">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    
+</body>
+</html>

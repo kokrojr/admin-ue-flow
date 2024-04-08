@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>My Board - Workspace</title>
+    <meta name="description" content="Efficiently manage your workflow and accounting tasks with the admin dashboard of Unique Flow & Accounting. Streamline processes, control access, and ensure compliance for your business needs.">
+    <meta name="keywords" content="admin dashboard, workflow management, accounting software, business management, access control, compliance, Unique Flow & Accounting">
+
+    <!-- Favicons -->
+
+    <!-- Favicons -->
+
+    <!-- Web Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Stylings -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- <link rel="stylesheet" href="/assets/css/component.css"> -->
+    <!-- <link rel="stylesheet" href="/assets/css/responsive.css"> -->
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- ===========================================================================================================
+    * Web app Development and Management Information:
+    
+    * App Development: Developed by Accend Engineering & Technology LLC. 
+        Our team has worked extensively on the design, coding, and implementation of the app's features, 
+        ensuring a user-friendly experience and seamless functionality.
+    
+    * App Management: Managed by Accend Engineering & Technology LLC.
+        The web app undergoes regular maintenance and updates. Our management includes content updates, 
+        performance optimization, security monitoring, and ensuring overall operational efficiency.
+    
+    * Contact Information: For inquiries, or feedback regarding the web app, please contact us 
+        at [webmaster@accendet.com] or visit our website at [www.accendet.com].
+    
+    * Note: This comment is for informational purposes and is not visible to the web app's end-users. 
+        It serves as a documentation of the development and management responsibilities of Accend.
+
+    ============================================================================================================ -->
+
+</head>
+<body class="my-board-page">
+
+    <div class="container">
+        <!-- ==== Begin Header ==== -->
+        <header class="header">
+            <div class="wrapper d-flex f-align-center-space-between">
+                <!-- Search -->
+                <div class="search-container">
+                    <i class="bi bi-search icon">
+                    </i>
+                    <input type="text" class="search-input" placeholder="Search documents and files...">
+                    <ul class="quick-results"></ul>
+                </div>
+                <!-- Navigate pages from on Header -->
+                <div class="nav-icon-set d-flex f-align-center">
+                    <!-- / Network activity / -->
+                    <div class="network-alert d-flex f-align-center"><span class="dot"><i class="bi bi-dot icon"></i></span>Online</div>
+                    <!-- / Navigation buttons / -->
+                    <button type="button" title="Activity" id="activity-btn" dataTarget="activityServiceID" class="app-btn active-notification"><i class="bi bi-activity icon"></i>
+                        <span class="dot">2</span>
+                    </button>
+                    <button type="button" title="Mail" id="mail-btn" dataTarget="mailerServiceID" class="app-btn active-notification"><i class="bi bi-envelope-fill icon"></i>
+                        <span class="dot show">1</span>
+                    </button>
+                    <button type="button" title="Notifications" id="notifications-btn" dataTarget="notificationServiceID" class="app-btn active-notification"><i class="bi bi-bell-fill icon"></i>
+                        <span class="dot">2</span>
+                    </button>
+                    <button type="button" title="Settings" class="app-btn"><i class="bi bi-gear-fill icon"></i></button>
+                    <!-- / Profile Card / -->
+                    <ul class="profile-card">
+                        <li class="d-flex f-align-center">
+                            <img id="profile-picture" src="/assets/images/profile pic.png" alt="">
+                            <a class="profile-name" href="#"><span id="username" dataTarget="userID">Daniel Kolubah<i class="bi bi-chevron-down icon"></i>
+                                <!-- <br><span id="user-role">Admin</span></span> -->
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End Header -->
+        </header>
+
+        <!-- ==== Begin Sidebar ==== -->
+        <aside class="sidebar ">
+            <div class="logo">
+                <img src="/assets/images/logo.png" alt="logo">
+            </div>
+            <div id="leftside-navigation" class="nano">
+                <ul class="nano-content">
+                    <!-- <li>General</li> -->
+                    <li>
+                        <a href="index.html"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
+                    </li>
+                    <li class="sub-menu active">
+                        <a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>Workspace</span><i
+                                class="arrow fa fa-angle-right pull-right"></i></a>
+                        <ul>
+                            <li class="active"><a href="ui-alerts-notifications.html">My board</a>
+                            </li>
+                            <li><a href="ui-panels.html">Activity</a>
+                            </li>
+                            <li><a href="ui-panels.html">Inbox</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>Documents</span><i
+                                class="arrow fa fa-angle-right pull-right"></i></a>
+                        <ul>
+                            <li><a href="ui-alerts-notifications.html">Requisition</a>
+                            </li>
+                            <li><a href="ui-panels.html">Vouchers</a>
+                            </li>
+                            <li><a href="ui-panels.html">Invoices</a>
+                            </li>
+                            <li><a href="ui-panels.html">Sales orders</a>
+                            </li>
+                            <li><a href="ui-panels.html">Purchase orders</a>
+                            </li>
+                            <li><a href="ui-panels.html">Leave of absence</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:void(0);"><i class="fa fa-table"></i><span>Ledger</span><i
+                                class="arrow fa fa-angle-right pull-right"></i></a>
+                        <ul>
+                            <li><a href="tables-basic.html">General ledger</a>
+                            </li>
+        
+                            <li><a href="tables-data.html">Personal ledger</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:void(0);"><i class="fa fa fa-tasks"></i><span>Accounts</span><i
+                                class="arrow fa fa-angle-right pull-right"></i></a>
+                        <ul>
+                            <li><a href="forms-components.html">Account list</a>
+                            </li>
+                            <li><a href="forms-validation.html">Account details</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- <li>Books</li> -->
+                    <li class="sub-menu">
+                        <a href="javascript:void(0);"><i class="fa fa-bar-chart-o"></i><span>Sales</span><i
+                                class="arrow fa fa-angle-right pull-right"></i></a>
+                        <ul>
+                            <li><a href="charts-chartjs.html">Sales summary</a>
+                            </li>
+                            <li><a href="charts-morris.html">Sales details</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:void(0);"><i class="fa fa-map-marker"></i><span>Expense</span><i
+                                class="arrow fa fa-angle-right pull-right"></i></a>
+                        <ul>
+                            <li><a href="map-google.html">Expense summary</a>
+                            </li>
+                            <li><a href="map-vector.html">Expense details</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:void(0);"><i class="fa fa-file"></i><span>Payroll</span><i
+                                class="arrow fa fa-angle-right pull-right"></i></a>
+                        <ul>
+                            <li><a href="pages-blank.html">Payroll summary</a>
+                            </li>
+                            <li><a href="pages-login.html">Payroll details</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:void(0);"><i class="fa fa-file"></i><span>Inventory</span><i
+                                class="arrow fa fa-angle-right pull-right"></i></a>
+                        <ul>
+                            <li><a href="pages-blank.html">Product list</a>
+                            </li>
+                            <li><a href="pages-login.html">Product details</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- <li>People</li> -->
+                    <li class="sub-menu">
+                        <a href="javascript:void(0);"><i class="fa fa-file"></i><span>Customers</span><i
+                                class="arrow fa fa-angle-right pull-right"></i></a>
+                        <ul>
+                            <li><a href="pages-blank.html">Customers list</a>
+                            </li>
+                            <li><a href="pages-login.html">Customers details</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:void(0);"><i class="fa fa-file"></i><span>Employees</span><i
+                                class="arrow fa fa-angle-right pull-right"></i></a>
+                        <ul>
+                            <li><a href="pages-blank.html">Employee list</a>
+                            </li>
+                            <li><a href="pages-login.html">Employee details</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:void(0);"><i class="fa fa-file"></i><span>Vendors</span><i
+                                class="arrow fa fa-angle-right pull-right"></i></a>
+                        <ul>
+                            <li><a href="pages-blank.html">Vendor list</a>
+                            </li>
+                            <li><a href="pages-login.html">Vendor details</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- ==== Main Content ==== -->
+        <div class="main">
+            <div class="wrapper">
+                <!-- <div class="banner"></div> -->
+                <div class="content">
+                    <!-- Page Heading -->
+                    <div class="heading d-flex">
+                        <h1 id="page-title" class="page-title">My board</h1>
+                        <!-- <p class="welcome-notice">Welcome back, Daniel! You have 11 items pending.</p> -->
+                        <div class="button-group">
+                            <button type="button" role="button" class="sec-cta">Add entity
+                            </button>
+                            <button type="button" role="button" class="pri-cta">Create new document
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Tab Group -->
+                    <div class="tab-group-navigation">
+                        <button type="button" role="button" class="tab-nav-btn active">Queue</button>
+                        <button type="button" role="button" class="tab-nav-btn">Draft</button>
+                        <button type="button" role="button" class="tab-nav-btn">Comments</button>
+                        <button type="button" role="button" class="tab-nav-btn">Tasks</button>
+                        <button type="button" role="button" class="tab-nav-btn">Documents</button>
+                        <button type="button" role="button" class="tab-nav-btn">Files</button>
+                    </div>
+                    <!-- / Tab #1: Queue Table / -->
+                    <div class="tab active">
+                        <table class="queue-table">
+                            <thead>
+                                <tr>
+                                    <th>Doc type</th>
+                                    <th>Doc ID</th>
+                                    <th>Prepared by</th>
+                                    <th>Prepared for</th>
+                                    <th>Status</th>
+                                    <th>Flow status</th>
+                                    <th>Date</th>
+                                    <th class="amount">Amount</th>
+                                    <th class="action">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Voucher</td>
+                                    <td><a href="#" docID="1234" docRef="voc0001">VOC0001</a></td>
+                                    <td><a href="#" userID="">Employee Full Name</a></td>
+                                    <td><a href="#" vendorID="">Vendor Full Name</a></td>
+                                    <td class="doc-status approved">Submitted</td>
+                                    <td class="flow-status">In progress</td>
+                                    <td class="date">2024-03-02</td>
+                                    <td class="amount">$500.00</td>
+                                    <td class="action">
+                                        <button type="button" role="button" title="View" class="view-doc" docID="12345">
+                                            <i class="bi bi-eye"></i></button>
+                                        <button type="button" role="button" title="Edit" class="edit-doc" docID="12345">
+                                            <i class="bi bi-pencil-square"></i></button>
+                                        <button type="button" role="button" title="Delete" class="delete-doc" docID="12345">
+                                            <i class="bi bi-x-lg"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Voucher</td>
+                                    <td><a href="#" docID="1234" docRef="voc0001">VOC0001</a></td>
+                                    <td><a href="#" userID="">Employee Full Name</a></td>
+                                    <td><a href="#" vendorID="">Vendor Full Name</a></td>
+                                    <td class="doc-status approved">Approved</td>
+                                    <td class="flow-status">In progress</td>
+                                    <td class="date">2024-03-02</td>
+                                    <td class="amount">$500.00</td>
+                                    <td class="action">
+                                        <button type="button" role="button" title="View" class="view-doc" docID="12345">
+                                            <i class="bi bi-eye"></i></button>
+                                        <button type="button" role="button" title="Edit" class="edit-doc" docID="12345">
+                                            <i class="bi bi-pencil-square"></i></button>
+                                        <button type="button" role="button" title="Delete" class="delete-doc" docID="12345">
+                                            <i class="bi bi-x-lg"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Voucher</td>
+                                    <td><a href="#" docID="1234" docRef="voc0001">VOC0001</a></td>
+                                    <td><a href="#" userID="">Employee Full Name</a></td>
+                                    <td><a href="#" vendorID="">Vendor Full Name</a></td>
+                                    <td class="doc-status reviewed-1">Reviewed-1</td>
+                                    <td class="flow-status">In progress</td>
+                                    <td class="date">2024-03-02</td>
+                                    <td class="amount">$500.00</td>
+                                    <td class="action">
+                                        <button type="button" role="button" title="View" class="view-doc" docID="12345">
+                                            <i class="bi bi-eye"></i></button>
+                                        <button type="button" role="button" title="Edit" class="edit-doc" docID="12345">
+                                            <i class="bi bi-pencil-square"></i></button>
+                                        <button type="button" role="button" title="Delete" class="delete-doc" docID="12345">
+                                            <i class="bi bi-x-lg"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Voucher</td>
+                                    <td><a href="#" docID="1234" docRef="voc0001">VOC0001</a></td>
+                                    <td><a href="#" userID="">Employee Full Name</a></td>
+                                    <td><a href="#" vendorID="">Vendor Full Name</a></td>
+                                    <td class="doc-status rejected">Rejected</td>
+                                    <td class="flow-status">In progress</td>
+                                    <td class="date">2024-03-02</td>
+                                    <td class="amount">$500.00</td>
+                                    <td class="action">
+                                        <button type="button" role="button" title="View" class="view-doc" docID="12345">
+                                            <i class="bi bi-eye"></i></button>
+                                        <button type="button" role="button" title="Edit" class="edit-doc" docID="12345">
+                                            <i class="bi bi-pencil-square"></i></button>
+                                        <button type="button" role="button" title="Delete" class="delete-doc" docID="12345">
+                                            <i class="bi bi-x-lg"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Voucher</td>
+                                    <td><a href="#" docID="1234" docRef="voc0001">VOC0001</a></td>
+                                    <td><a href="#" userID="">Employee Full Name</a></td>
+                                    <td><a href="#" vendorID="">Vendor Full Name</a></td>
+                                    <td class="doc-status approved">Approved</td>
+                                    <td class="flow-status">In progress</td>
+                                    <td class="date">2024-03-02</td>
+                                    <td class="amount">$500.00</td>
+                                    <td class="action">
+                                        <button type="button" role="button" title="View" class="view-doc" docID="12345">
+                                            <i class="bi bi-eye"></i></button>
+                                        <button type="button" role="button" title="Edit" class="edit-doc" docID="12345">
+                                            <i class="bi bi-pencil-square"></i></button>
+                                        <button type="button" role="button" title="Delete" class="delete-doc" docID="12345">
+                                            <i class="bi bi-x-lg"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Voucher</td>
+                                    <td><a href="#" docID="1234" docRef="voc0001">VOC0001</a></td>
+                                    <td><a href="#" userID="">Employee Full Name</a></td>
+                                    <td><a href="#" vendorID="">Vendor Full Name</a></td>
+                                    <td class="doc-status approved">Approved</td>
+                                    <td class="flow-status">In progress</td>
+                                    <td class="date">2024-03-02</td>
+                                    <td class="amount">$5,000,000.00</td>
+                                    <td class="action">
+                                        <button type="button" role="button" title="View" class="view-doc" docID="12345">
+                                            <i class="bi bi-eye"></i></button>
+                                        <button type="button" role="button" title="Edit" class="edit-doc" docID="12345">
+                                            <i class="bi bi-pencil-square"></i></button>
+                                        <button type="button" role="button" title="Delete" class="delete-doc" docID="12345">
+                                            <i class="bi bi-x-lg"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Voucher</td>
+                                    <td><a href="#" docID="1234" docRef="voc0001">VOC0001</a></td>
+                                    <td><a href="#" userID="">Employee Full Name</a></td>
+                                    <td><a href="#" vendorID="">Vendor Full Name</a></td>
+                                    <td class="doc-status approved">Approved</td>
+                                    <td class="flow-status">In progress</td>
+                                    <td class="date">2024-03-02</td>
+                                    <td class="amount">$500.00</td>
+                                    <td class="action">
+                                        <button type="button" role="button" title="View" class="view-doc" docID="12345">
+                                            <i class="bi bi-eye"></i></button>
+                                        <button type="button" role="button" title="Edit" class="edit-doc" docID="12345">
+                                            <i class="bi bi-pencil-square"></i></button>
+                                        <button type="button" role="button" title="Delete" class="delete-doc" docID="12345">
+                                            <i class="bi bi-x-lg"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Voucher</td>
+                                    <td><a href="#" docID="1234" docRef="voc0001">VOC0001</a></td>
+                                    <td><a href="#" userID="">Employee Full Name</a></td>
+                                    <td><a href="#" vendorID="">Vendor Full Name</a></td>
+                                    <td class="doc-status approved">Approved</td>
+                                    <td class="flow-status">In progress</td>
+                                    <td class="date">2024-03-02</td>
+                                    <td class="amount">$500.00</td>
+                                    <td class="action">
+                                        <button type="button" role="button" title="View" class="view-doc" docID="12345">
+                                            <i class="bi bi-eye"></i></button>
+                                        <button type="button" role="button" title="Edit" class="edit-doc" docID="12345">
+                                            <i class="bi bi-pencil-square"></i></button>
+                                        <button type="button" role="button" title="Delete" class="delete-doc" docID="12345">
+                                            <i class="bi bi-x-lg"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Voucher</td>
+                                    <td><a href="#" docID="1234" docRef="voc0001">VOC0001</a></td>
+                                    <td><a href="#" userID="">Employee Full Name</a></td>
+                                    <td><a href="#" vendorID="">Vendor Full Name</a></td>
+                                    <td class="doc-status approved">Approved</td>
+                                    <td class="flow-status">In progress</td>
+                                    <td class="date">2024-03-02</td>
+                                    <td class="amount">$500.00</td>
+                                    <td class="action">
+                                        <button type="button" role="button" title="View" class="view-doc" docID="12345">
+                                            <i class="bi bi-eye"></i></button>
+                                        <button type="button" role="button" title="Edit" class="edit-doc" docID="12345">
+                                            <i class="bi bi-pencil-square"></i></button>
+                                        <button type="button" role="button" title="Delete" class="delete-doc" docID="12345">
+                                            <i class="bi bi-x-lg"></i></button>
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+
+
+                    </div>
+        
+                </div>
+        
+        
+            </div>
+        
+        </div>
+
+        <!-- ==== Begin Footer ==== -->
+        <footer class="footer">
+            <div class="wrapper d-flex f-align-center-space-between">
+                
+            </div>
+        </footer>
+
+
+    </div>
+    
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+    
+    <!-- JavaScript -->
+    <script src="/assets/js/index.js"></script>
+    <script src="/Services/AuthService.js"></script>
+    <script src="/Services/dataService.js"></script>
+    <script src="/Services/flowDataService.js"></script>
+    <script src="/assets/js/utils.js"></script>
+    <script src="/Services/routingService.js"></script>
+    <script src="/Services/requisitionService.js"></script>
+    
+</body>
+</html>

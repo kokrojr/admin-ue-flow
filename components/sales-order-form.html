@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Sales Order Form</title>
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    <!-- ===========================================================================================================
+    * Web app Development and Management Information:
+    
+    * App Development: Developed by Accend Engineering & Technology LLC. 
+        Our team has worked extensively on the design, coding, and implementation of the app's features, 
+        ensuring a user-friendly experience and seamless functionality.
+    
+    * App Management: Managed by Accend Engineering & Technology LLC.
+        The web app undergoes regular maintenance and updates. Our management includes content updates, 
+        performance optimization, security monitoring, and ensuring overall operational efficiency.
+    
+    * Contact Information: For inquiries, or feedback regarding the web app, please contact us 
+        at [webmaster@accendet.com] or visit our website at [www.accendet.com].
+    
+    * Note: This comment is for informational purposes and is not visible to the web app's end-users. 
+        It serves as a documentation of the development and management responsibilities of Accend.
+
+    ============================================================================================================ -->
+</head>
+<body>
+
+    <div id="sales-order-form-container" class="sales-order-form-container form--u1">
+        <div class="sales-order-form">
+            <div class="headline">
+                <h2 class="form-title">Create Sales Order</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt.</p>
+                <button onclick="closeSalesOrderModal()" id="close-sales-order-btn" class="close-btn pri-cta" type="button" title="Exit">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="content-wrapper">
+                <!-- Customer Information -->
+                <div class="section-headline">
+                    <h4>Customer Information</h4>
+                    <p>Enter details of the customer placing the order.</p>
+                </div>
+                <div class="input-group">
+                    <label for="customerName">Customer Name:</label>
+                    <input class="form-input" id="customerName" name="customerName" type="text">
+                </div>
+                <div class="input-group">
+                    <label for="customerAddress">Customer Address:</label>
+                    <input class="form-input" id="customerAddress" name="customerAddress" type="text">
+                    <!-- <textarea class="form-input" id="customerAddress" name="customerAddress" rows="3"></textarea> -->
+                </div>
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input class="form-input" id="email" name="email" type="email">
+                </div>
+                <div class="input-group">
+                    <label for="phone">Phone:</label>
+                    <input class="form-input" id="phone" name="phone" type="number">
+                </div>
+                <!-- Order Details -->
+                <div class="section-headline">
+                    <h4>Order Details</h4>
+                    <p>Enter details of the products or services being ordered.</p>
+                </div>
+                <!-- Product/Service 1 -->
+                <div class="input-group">
+                    <label for="product1">Product Name:</label>
+                    <input class="form-input" id="product1" name="product1" type="text">
+                </div>
+                <div class="input-group">
+                    <label for="quantity1">Quantity:</label>
+                    <input class="form-input" id="quantity1" name="quantity1" type="number">
+                </div>
+                <div class="input-group">
+                    <label for="price1">Price:</label>
+                    <input class="form-input" id="price1" name="price1" type="number">
+                </div>
+                <button type="button" role="button" id="add-item-btn" class="button-1">Add Item</button>
+                <!--  -->
+                <!-- Data Table -->
+                <table class="table-1">
+                    <thead>
+                        <tr>
+                            <th>S/N</th>
+                            <th>Item</th>
+                            <th>SKU</th>
+                            <th>Quantity</th>
+                            <th>Currency</th>
+                            <th>Unit Price</th>
+                            <th class="amount">Subtotal</th>
+                            <th class="action">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Laptop computer</td>
+                            <td>12345678</td>
+                            <td>1</td>
+                            <td>USD</td>
+                            <td>50,0000</td>
+                            <td class="amount">$ 500,000,000</td>
+                            <td class="action">
+                                <button type="button" class="edit-doc" docID="12345" title="Edit">
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="delete-doc" docID="12345" title="Delete">
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Laptop computer</td>
+                            <td>12345678</td>
+                            <td>1</td>
+                            <td>USD</td>
+                            <td>50,0000</td>
+                            <td class="amount">$ 500,000,000</td>
+                            <td class="action">
+                                <button type="button" class="edit-doc" docID="12345" title="Edit">
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="delete-doc" docID="12345" title="Delete">
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Laptop computer</td>
+                            <td>12345678</td>
+                            <td>1</td>
+                            <td>USD</td>
+                            <td>50,0000</td>
+                            <td class="amount">$ 500,000,000</td>
+                            <td class="action">
+                                <button type="button" class="edit-doc" docID="12345" title="Edit">
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="delete-doc" docID="12345" title="Delete">
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="grand-total">
+                            <td colspan="6">Grand Total</td>
+                            <td class="amount">$ 500,000,000</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <!-- Add more product/service fields as needed -->
+                <!-- Payment Terms -->
+                <div class="section-headline">
+                    <h4>Payment Terms</h4>
+                    <p>Select the payment terms for the order.</p>
+                </div>
+                <div class="input-group">
+                    <label for="paymentTerms">Payment Terms:</label>
+                    <select class="form-input" id="paymentTerms" name="paymentTerms">
+                        <option value="">Select Payment Terms</option>
+                        <option value="net30">Net 30</option>
+                        <option value="net60">Net 60</option>
+                        <option value="COD">Cash on Delivery</option>
+                        <!-- Add more payment terms as needed -->
+                    </select>
+                </div>
+                <!-- Additional Notes -->
+                <div class="section-headline">
+                    <h4>Additional Notes</h4>
+                    <p>Add any additional notes or instructions for the order.</p>
+                </div>
+                <div class="input-group">
+                    <label for="additionalNotes">Additional Notes:</label>
+                    <textarea class="form-input" id="additionalNotes" name="additionalNotes" rows="3"></textarea>
+                </div>
+                <!-- Buttons -->
+                <div class="button-group">
+                    <input id="sales-order-save-as-draft-btn" type="submit" value="Save as draft" class="sec-cta">
+                    <input id="sales-order-submit-btn" type="submit" value="Submit sales order" class="pri-cta">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+
+
+    
+</body>
+</html>
