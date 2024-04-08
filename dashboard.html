@@ -85,7 +85,7 @@
                         <span class="status">Online</span>
                     </div>
                     <!-- Create Button -->
-                    <button id="create-btn" type="button" role="button" class="pri-cta create-btn">Create</button>
+                    <button id="create-button-header" type="button" role="button" class="pri-cta create-btn">Create</button>
                     <!-- Acitivity Button -->
                     <button type="button" title="Activity" id="activity-btn" dataTarget="activityServiceID" 
                         class="app-btn active-notification"><i class="bi bi-activity icon"></i><span class="dot">2</span>
@@ -437,6 +437,17 @@
             </div>
         </footer>
 
+        <!-- ==== Create Menu Modal ==== -->
+    <div id="page-modal-wrapper-create-menu" class="page-modal-wrapper-create-menu hide-menu">
+        <!-- Mega menu will be loaded here -->
+    </div>
+    
+    <!-- ==== Input Form Modal ==== -->
+    <div id="page-modal-wrapper-input-form" class="page-modal-wrapper-input-form hide-modal">
+        <!-- Requisition Form will be loaded here -->
+    
+    </div>
+
 
     </div>
     
@@ -449,6 +460,9 @@
     <!-- JavaScript -->
     <script src="/Services/AuthService.js"></script>
     <script src="/assets/js/index.js"></script>
+    <script src="/Services/dataService.js?v=1"></script>
+    <script src="/assets/js/utils.js"></script>
+    <script src="/Services/requisitionService.js"></script>
 
     <!-- No load simulation -->
 
